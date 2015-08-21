@@ -937,7 +937,7 @@ get_userinfo(ProxyCluster *cluster, Oid user_oid)
 	struct AANode *node;
 	const char *username;
 
-	username = GetUserNameFromId(user_oid);
+	username = GetUserNameFromId(user_oid, true);
 
 	node = aatree_search(&cluster->userinfo_tree, (uintptr_t)username);
 	if (node) {
